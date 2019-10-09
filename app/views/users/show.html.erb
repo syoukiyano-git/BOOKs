@@ -1,0 +1,61 @@
+
+ <div class="container">
+    <div class="center">
+    <h1 class="white text-align">
+        <%= current_user.nickname %>
+        <span>さんのマイページ</span>
+    </h1>
+    </div>
+    <div class="contents">
+    <% unless current_user.reviews.present? %>
+     <h1 class="white text-align mypage">まだレビューがありません、レビューを投稿してみよう！</h1>
+    <% end %>
+    <ul>
+    <% current_user.reviews.each do  |review| %>
+     <li>
+       <a href = "/products/<%= review.product.id %>"><div class="contents-img" style="background-image:url(<%= review.product.image_url %>)"></div></a>
+        
+         <% if review.rate.present? %>
+         <!--星評価-->
+         <div id="star-rate-<%= review.rate %>"></div>
+         <script>
+          $('#star-rate-<%= review.rate %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            readOnly: true,
+            score: <%= review.rate %>
+          });
+         </script>  
+        <!--/星評価-->
+        
+        <% else %>
+        
+         <div id="star-rate-0"></div>
+           <script>
+          $('#star-rate-0').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            readOnly: true,
+            score: 0
+          });
+         </script> 
+        <% end %>
+        
+        <h4>
+        <a class="white" href= "/products/<%= review.product.id %>"><%= review.product.title %></a>
+        </h4>
+        
+        <div class="user-review white">
+            <h3><%= review.review %></h3>
+        </div>
+        
+        
+        <%= link_to '再投稿' , "/products/#{ review.product_id }/reviews/#{ review.id }/edit" ,method: :get , :class =>'btn-normal'%>
+        <%= link_to '削除' , "/products/#{ review.product_id }/reviews/#{ review.id }" ,method: :delete , :class => 'btn-normal'%>
+    </li>
+    <% end %>
+    </ul>
+</div>
+</div>

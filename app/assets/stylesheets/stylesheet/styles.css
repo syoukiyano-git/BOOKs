@@ -1,0 +1,170 @@
+h1,h2,h3,h4,h5,h6{
+       color:#fff;
+}
+
+ul{
+    text-decoration: none;
+    list-style: none;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+}
+.center{
+    margin: 0 auto;
+    width: 400px;
+}
+.justify-center{
+    justify-content: center;
+}
+.text-align{
+    text-align:center;
+    margin:10px 0 40px 0;
+}
+.mypage{
+    margin: 100px 0 300px 0 ;
+}
+.contents-img{
+    display:block;
+    overflow:hidden;
+    position:relative;
+    width: 265px ;
+    height: 360px ;
+    margin-bottom:5px;
+}
+.contents-new{
+    margin:10px auto 150px auto;
+    /*width: 500px;*/
+}
+.contents-show{
+    margin:40px;
+}
+.content{
+    margin: 40px 0 ;
+}
+.all-contents{
+    position:absolute;
+}
+/*btn*/
+
+.btn-normal{
+    position: relative;
+    display: inline-block;
+    padding: 0.5em  1em;
+    text-decoration: none;
+    color: #111;
+    background: linear-gradient(to bottom, #f7dea1, #f0c24d);
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #9c7e31;
+    margin:20px 0;
+}
+.btn-normal:active {
+    /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.btn-normal:hover{
+    text-decoration:none;
+    background: linear-gradient(to bottom, #f5d689, #eeba35);
+    color:#111;
+}
+.button{
+  display: inline-block;
+  width: 300px;
+  border: 1px solid #9c7e31;
+  border-top: 1px solid #a88734;
+  border-bottom: 1px solid #846a29;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #f7dea1, #f0c24d);
+  box-shadow: 0 1px 0 #faecc8 inset;
+  text-align: center;
+  color: #111;
+  font-size: 0.8em;
+  line-height: 1;
+  padding: 0.7em;
+}
+.button:hover{
+  background: linear-gradient(to bottom, #f5d689, #eeba35);
+}
+.form-btn{
+    margin:20px;
+}
+/*star-rate*/
+.book-rate{
+    margin: 10px;
+}
+/*form*/
+.form-review{
+    width:200px;
+    height: 300px;
+}
+.form-submit{
+    width: 500px; 
+    height: 300px;
+}
+.border-review{
+margin: 10px 10px;
+padding: 10px 10px 30px 10px;
+border-bottom: 1px solid #fff;
+}
+.white{
+    color:#fff;
+}
+
+.orange{
+    color:orange;
+}
+
+.contents h4 a:hover{
+    color:orange;
+    text-decoration:none;
+}
+span a:hover{
+    color:orange;
+    
+}
+
+.pagination {
+  justify-content: center;
+}
+
+/*フォーム全体*/
+#form{
+position:relative;/*フォームの相対位置*/	
+max-width:300px;/*フォームのサイズ*/
+margin:0 auto 20px auto;/*フォームの下に余白*/
+
+}
+/*検索ボックス*/
+#box-f{
+position:absolute;/*フォームの絶対位置*/	
+left:0;
+top:0; 	
+outline:0;/*クリック時の青い枠線消す*/	
+height:30px;/*検索ボックスの高さ*/	
+padding:0px;/*テキスト位置調整*/	 
+border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
+background:#eee;/*検索ボックスの背景カラー*/
+width: 250px;
+
+}
+/*検索ボタン*/
+#btn-f{
+width:70px;/*検索ボタンの横幅*/ 
+height:30px;/*検索ボタンの縦幅*/ 
+position:absolute;/*検索ボタンの絶対位置*/  
+left:250px;/*検索ボタンの位置調整*/  
+top:0;
+border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
+background:#CF964D;/*検索ボタンの背景カラー*/ 
+border:none;/*検索ボタンの枠線を消す*/ 
+color:#fff;/*検索ボタンのテキストカラー*/ 
+font-weight:bold;/*検索ボタンのテキスト太字*/ 
+font-size:16px;/*検索ボタンのフォントサイズ*/ 
+}
+/*検索ボタンマウスオーバー時*/
+#btn-f:hover{
+color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/ 
+}

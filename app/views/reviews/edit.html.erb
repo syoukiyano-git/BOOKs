@@ -1,0 +1,35 @@
+ <div class="container">
+     <div class="contents">
+     <div class = "contents-new">
+    <article>
+    
+         <a href = "/products/<%= @product %>"><div class="contents-img" style="background-image:url(<%= @product.image_url %>)"></div></a>
+         
+         <h4>
+        <a class="white " href= "/products/<%= @product %>"><%= @product.title %></a>
+        </h4>
+        
+        <h4>
+         <%= @product.author %>
+        </h4>
+        
+        <%= form_tag("/products/#{@review.product_id}/reviews/#{@review.id}", method: :put) do %>
+        
+
+        <!--　レビュー　-->
+        <div class="form-review">
+            <textarea class="form-submit" name= "review" placeholder="記事を編集してみよう！"><%= @review.review %></textarea>
+        </div>
+        <div class="form-btn">
+            <input type="submit" class="button" value="再投稿する">
+        </div>
+        <% end %>
+    </article>
+    
+    </div>
+    
+    <a href= "/" class="btn-normal">トップへ戻る</a>
+
+</div>
+</div>
+

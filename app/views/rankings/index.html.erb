@@ -1,0 +1,40 @@
+ <div class="container">
+   <div class="contents" >
+          <h1 class="white text-align">
+              Booksランキング
+          </h1>
+          
+          <ul>
+          <% @ranking.each.with_index(1) do |ranking_product, i| %>
+          <li>
+              <h1 class="orange"><%= i %></h1>
+              <a href="/products/<%= ranking_product.id %>">
+              <img src="<%= ranking_product.image_url %>" alt="" class="contents-img">
+              </a>
+              <h4>
+              <a class="white" href= "/products/<%= ranking_product.id %>"><%= ranking_product.title %></a>
+              </h4>
+  
+              
+              <% if ranking_product.reviews.present? %>
+           
+             <div id="star-rate-<%= ranking_product.review_average %>"></div>
+             <script>
+              $('#star-rate-<%= ranking_product.review_average %>').raty({
+                size: 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                readOnly: true,
+                score: <%= ranking_product.review_average %>
+              });
+             </script>  
+            
+            <% end %>
+              
+          </li>
+          <% end %>
+          </ul>
+    </div>
+     <a href= "/" class="btn-normal">トップへ戻る</a>
+
+ </div>

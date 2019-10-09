@@ -1,0 +1,25 @@
+<%= paginator.render do %>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <nav class="mx-auto " style="width: 60%;">
+=======
+  <nav class="mx-auto " style="width: 510px;">
+>>>>>>> origin/master
+=======
+  <nav class="mx-auto " style="width: 60%;">
+>>>>>>> d03d505d7cd97a9ba3464fc10f3c54a1cbb27166
+    <ul class="pagination">
+      <%= first_page_tag unless current_page.first? %>
+      <%= prev_page_tag unless current_page.first? %>
+      <% each_page do |page| %>
+        <% if page.left_outer? || page.right_outer? || page.inside_window? %>
+          <%= page_tag page %>
+        <% elsif !page.was_truncated? -%>
+        <%= gap_tag %>
+        <% end %>
+      <% end %>
+      <%= next_page_tag unless current_page.last? %>
+      <%= last_page_tag unless current_page.last? %>
+    </ul>
+  </nav>
+<% end %>

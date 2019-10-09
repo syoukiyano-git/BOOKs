@@ -1,0 +1,47 @@
+ 
+<div class="container">
+    
+    <form id="form" action="/products/search" method="get">
+    <input id="box-f" class="contents-search" name="keyword" placeholder="作品名で検索" type="text" value=""><input id="btn-f" title="検索" type="submit" value="検索"></input></input>
+    </form>
+    
+     <div class="contents">
+    
+    <% @products.each do |product| %>
+    <ul>
+      <li>
+        <div class="content">
+        
+        <a href = "/products/<%= product.id %>"><div class="contents-img" style="background-image:url(<%= product.image_url %>)"></div></a>
+        
+        <% if product.reviews.present? %>
+         <!--星評価-->
+         <div id="star-rate-<%= product.review_average %>"></div>
+         <script>
+          $('#star-rate-<%= product.review_average %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            readOnly: true,
+            score: <%= product.review_average %>
+          });
+         </script>  
+        <!--/星評価-->
+        <% else %>
+         <div id="star-rate-0"></div>
+        <% end %>
+        
+        <h4>
+        <a class="white" href= "/products/<%= product.id %>"><%= product.title %></a>
+        </h4>
+        
+        </div>
+      </li>
+    </ul>
+    <% end %>
+    <a href= "/" class="btn-normal">トップへ戻る</a>
+  </div>
+ </div>
+
+
+

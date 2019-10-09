@@ -1,0 +1,99 @@
+
+<%= stylesheet_link_tag "css/bootstrap/bootstrap", :media => "all" %>
+<%= stylesheet_link_tag "css/slick", :media => "all" %>
+<%= stylesheet_link_tag "css/slick-theme", :media => "all" %>
+<%= stylesheet_link_tag "css/helpers", :media => "all" %>
+<%= stylesheet_link_tag "css/style", :media => "all" %>
+<%= stylesheet_link_tag "css/landing-2", :media => "all" %>
+
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+  
+	<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+
+    <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/"><h1>Books</h1></a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="ion-navicon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="probootstrap-navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#section-home">ホーム</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-features">特徴</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-reviews">レビュー</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-faq">FAQ</a></li>
+            <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><a class="nav-link" href="" target="_blank"><span class="pb_rounded-4 px-4">Get Started</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+
+
+
+    <section class="pb_cover_v3 overflow-hidden cover-bg-darkwood cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home" style="background-image:url(<%= asset_path "open-book.jpg" %>);height:800px;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6">
+            <h2 class="heading mb-3">Booksへようこそ!</h2>
+            <div class="sub-heading">
+              <p class="mb-4"style="font-weight: bold;">残念ながら人間の脳はただ読書をしただけでは、記憶に残りません、せっかくの読書をもっと有意義なものにするために、本のレビューを投稿してアウトプットしてみよう!</p>
+              <p class="mb-5"><a class="btn-success btn-lg pb_btn-pill smoothscroll" href="/users/sign_in"><span class="pb_font-14 text-uppercase pb_letter-spacing-1">ログイン</span></a></p>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-5 relative align-self-center">
+
+           
+            <div class="bg-white rounded pb_form_v1">
+               
+              <h2 class="mb-4 mt-0 text-center">新規登録</h2>
+              
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              
+              <div class="form-group">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control pb_height-50 reverse" ,placeholder: "email" %>
+              </div>
+              
+              <div class="form-group">
+                <%= f.password_field :password, autocomplete: "new-password", class:"form-control pb_height-50 reverse", placeholder:"password" %>
+              </div>
+              
+              <div class="form-group">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control pb_height-50 reverse", placeholder:"password(確認用)" %>
+              </div>
+              
+              <div class="form_group">
+                <%= f.text_field :nickname ,class:"form-control pb_height-50 reverse",placeholder: 'ニックネームを入力(必須)' %>
+              </div>
+              
+              <div class="form-group-last">
+                <%= f.submit "登録" ,:class=>"button" %>
+              </div>
+              
+              <% end %>
+  
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    <%= javascript_include_tag 'js/jquery.min' %>
+    <%= javascript_include_tag 'js/popper.min' %>
+    <%= javascript_include_tag 'js/bootstrap.min' %>
+    <%= javascript_include_tag 'js/slick.min' %>
+    <%= javascript_include_tag 'js/jquery.mb.YTPlayer.min' %>
+    <%= javascript_include_tag 'js/jquery.waypoints.min' %>
+    <%= javascript_include_tag 'js/jquery.easing.1.3' %>
+    <%= javascript_include_tag 'js/main' %>
+  
+
+</body>

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="contents">
+    
+    
+  <div class="contents-show">
+  <div class="contents-img" style="background-image:url(<%= @product.image_url %>)">
+  </div>
+  <div class="book-title white">
+    <h4>
+      <%= @product.title %>
+    </h4>
+    
+  </div>
+  <div class="book-detail">
+    <h4></h4>
+  </div>
+  
+  <div class="book-author white">
+    <h4>
+     <%= @product.author %>
+    </h4>
+  </div>
+  <a href= "/products/<%= @product.id %>/reviews/new" class="btn-normal">レビューを投稿する</a>
+  
+  <ul>
+    <% @product.reviews.each do |review| %>
+    <li>
+      <div class="review-nickname white">
+        <h3>
+        <%= review.user.nickname %>
+        </h3>
+      </div>
+    
+       <!--星評価-->
+         <div id="star-rate-<%= review.rate %>"></div>
+          <script>
+          $('#star-rate-<%=  review.rate %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%=  review.rate %>,
+          });
+          </script>  
+        <!--/星評価-->
+        <div class="review border-review">
+       <h3>
+        <%= review.review %>
+      </h3>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  
+ 
+  <a href= "/" class="btn-normal">トップへ戻る</a>
+  </div>
+  
+</div>
+</div>

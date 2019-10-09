@@ -1,0 +1,47 @@
+<div class="container">
+     <div class="contents">
+     <div class = "contents-new">
+    <article>
+    
+         <a href = "/products/<%= @product.id %>"><div class="contents-img" style="background-image:url(<%= @product.image_url %>)"></div></a>
+         
+         <h4>
+        <a class="white " href= "/products/<%= @product.id %>"><%= @product.title%></a>
+        </h4>
+        
+        <h4>
+         <%= @product.author %>
+        </h4>
+        
+        <%= form_for [@product, @review] do |f| %>
+　　　　<!-- 評価　-->
+        <div class="form-rate white" id="star">
+            <%= f.label :評価%>
+            <%= f.hidden_field :rate %>
+        </div>
+         <!-- 評価javascript -->
+          <script>
+          $('#star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            scoreName: 'review[rate]',
+          });
+          </script>  
+        <!--　レビュー　-->
+        <div class="form-review">
+            <%= f.text_area :review, placeholder: 'レビューを書いてね!',class: "form-submit" %>
+        </div>
+        <div class="form-btn">
+            <button type="submit" class="button">投稿する</button>
+        </div>
+        <% end %>
+    </article>
+    
+    </div>
+    
+    <a href= "/" class="btn-normal">トップへ戻る</a>
+
+</div>
+</div>
+

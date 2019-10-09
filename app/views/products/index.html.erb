@@ -1,0 +1,46 @@
+ <div class="container">
+   <div class="contents">
+    <ul>
+      <% @products.each do |product| %>
+    <li>
+    <div class="content">
+        <a href = "/products/<%= product.id %>"><div class="contents-img" style="background-image:url(<%= product.image_url %>)"></div></a>
+        
+        
+        <% if product.reviews.present? %>
+         <!--星評価-->
+         <div id="star-rate-<%= product.review_average %>"></div>
+         <script>
+          $('#star-rate-<%= product.review_average %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            readOnly: true,
+            score: <%= product.review_average %>
+          });
+         </script>  
+        <!--/星評価-->
+        <% end %>
+      
+        
+        <h4>
+        <a class="white" href= "/products/<%= product.id %>"><%= product.title %></a>
+        </h4>
+
+     </div>
+     </li>
+     <% end %>
+    </ul>
+     </div>
+     <div class="paginate">
+      
+      <ul>
+     <%= paginate( @products ) %>
+     </ul>
+     </div>
+     <a href= "/" class="btn-normal">トップへ戻る</a>
+
+</div>
+
+
+
