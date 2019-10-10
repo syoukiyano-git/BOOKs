@@ -17,4 +17,4 @@
 .byebug_history
 
 #Ignore public/assets
-/public/assets
+public/assets/*
