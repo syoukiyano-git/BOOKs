@@ -53,7 +53,7 @@
         
         
         <%= link_to '再投稿' , "/products/#{ review.product_id }/reviews/#{ review.id }/edit" ,method: :get , :class =>'btn-normal'%>
-        <%= link_to '削除' , "/products/#{ review.product_id }/reviews/#{ review.id }" ,method: :delete , :class => 'btn-normal'%>
+        <%= link_to '削除' , "/products/#{ review.product_id }/reviews/#{ review.id }", :class => 'btn-normal'%>
     </li>
     <% end %>
     </ul>
