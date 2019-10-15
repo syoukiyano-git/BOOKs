@@ -4,6 +4,10 @@
               Booksランキング
           </h1>
           
+           <% unless current_user.reviews.present? %>
+            <h1 class="white text-align mypage">まだランキングはありません、レビューを投稿してみよう！</h1>
+           <% end %>
+          
           <ul>
           <% @ranking.each.with_index(1) do |ranking_product, i| %>
           <li>
@@ -18,9 +22,9 @@
               
               <% if ranking_product.reviews.present? %>
            
-             <div id="star-rate-<%= ranking_product.review_average %>"></div>
+             <div id="star-ranking-<%= ranking_product.review_average %>"></div>
              <script>
-              $('#star-rate-<%= ranking_product.review_average %>').raty({
+              $('#star-ranking-<%= ranking_product.review_average %>').raty({
                 size: 36,
                 starOff:  '<%= asset_path('star-off.png') %>',
                 starOn : '<%= asset_path('star-on.png') %>',
@@ -28,13 +32,13 @@
                 score: <%= ranking_product.review_average %>
               });
              </script>  
-            
             <% end %>
               
           </li>
           <% end %>
           </ul>
     </div>
+    <div class="top-btn">
      <a href= "/" class="btn-normal">トップへ戻る</a>
-
+    </div>
  </div>

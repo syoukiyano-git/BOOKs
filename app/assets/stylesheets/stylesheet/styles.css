@@ -24,6 +24,9 @@ li{
 .mypage{
     margin: 100px 0 300px 0 ;
 }
+.top-btn{
+    margin:0 0 20px 10px;
+}
 .contents-img{
     display:block;
     overflow:hidden;

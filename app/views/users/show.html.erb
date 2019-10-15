@@ -22,9 +22,9 @@
        <div class="review-content">
          <% if review.rate.present? %>
          <!--星評価-->
-         <div id="star-rate-<%= review.rate %>"></div>
+         <div id="star-<%= review.rate %>"></div>
          <script>
-          $('#star-rate-<%= review.rate %>').raty({
+          $('#star-<%= review.rate %>').raty({
             size: 36,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
@@ -33,19 +33,7 @@
           });
          </script>  
         <!--/星評価-->
-        
-        <% else %>
-        
-         <div id="star-rate-0"></div>
-           <script>
-          $('#star-rate-0').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            readOnly: true,
-            score: 0
-          });
-         </script> 
+      
         <% end %>
         
         
