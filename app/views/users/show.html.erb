@@ -15,6 +15,11 @@
      <li>
        <a href = "/products/<%= review.product.id %>"><div class="contents-img" style="background-image:url(<%= review.product.image_url %>)"></div></a>
         
+       <h4>
+        <a class="white" href= "/products/<%= review.product.id %>"><%= review.product.title %></a>
+       </h4>
+       
+       <div class="review-content">
          <% if review.rate.present? %>
          <!--星評価-->
          <div id="star-rate-<%= review.rate %>"></div>
@@ -43,17 +48,18 @@
          </script> 
         <% end %>
         
-        <h4>
-        <a class="white" href= "/products/<%= review.product.id %>"><%= review.product.title %></a>
-        </h4>
+        
         
         <div class="user-review white">
             <h3><%= review.review %></h3>
         </div>
+        </div>
         
-        
+        <div class="display-flex">
         <%= link_to '再投稿' , "/products/#{ review.product_id }/reviews/#{ review.id }/edit" ,method: :get , :class =>'btn-normal'%>
         <%= button_to '削除' , "/products/#{ review.product_id }/reviews/#{ review.id }" ,method: :delete , :class => 'btn-normal'%>
+        </div>
+        
     </li>
     <% end %>
     </ul>

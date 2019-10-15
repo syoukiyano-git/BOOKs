@@ -126,6 +126,15 @@ span a:hover{
     
 }
 
+.display-flex{
+    display: flex;
+    margin: 10px 0 20px 0;
+}
+
+.review-content{
+    margin:5px 0 10px 0 ;
+}
+
 .pagination {
   justify-content: center;
 }
